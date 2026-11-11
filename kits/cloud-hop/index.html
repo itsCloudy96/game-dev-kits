@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cloud Hop — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Cloud Hop</div>
+      <div id="hud">Stars 0 · Lives 3</div>
+    </header>
+    <div id="stage">
+      <canvas id="game" width="960" height="540" aria-label="Cloud Hop game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>Cloud Hop</h1>
+        <p>Run the sky islands, grab the stars, and reach the beacon. Falling costs a life.</p>
+        <p class="controls">← → or A D to move · Space / ↑ / W / tap to jump</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — open game.js, tweak the constants, and make it yours.</p>
+  </div>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

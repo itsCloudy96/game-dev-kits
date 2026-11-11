@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cellar Crawl — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Cellar Crawl</div>
+      <div id="hud">Floor 1 · HP 8 · Gold 0</div>
+    </header>
+    <div id="stage">
+      <canvas id="game" width="960" height="540" aria-label="Cellar Crawl game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>Cellar Crawl</h1>
+        <p>A turn-based roguelike. Explore the fog, bump into pests, drink flasks, and take the stairs down.</p>
+        <p class="controls">Arrow keys or WASD to move (one step per turn) · bump to attack</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — the dungeon generator and enemy table in game.js are the fun part to remix.</p>
+  </div>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

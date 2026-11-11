@@ -1,0 +1,83 @@
+{
+  "generatedAt": "2026-11-10",
+  "disclaimer": "All kits are original Cloudy work, MIT-licensed, and free to download. Art and sound are generated in code. Review and playtest your own changes before you ship them.",
+  "kits": [
+    {
+      "id": "cloud-hop",
+      "title": "Cloud Hop",
+      "genre": "Platformer",
+      "engine": "Vanilla canvas",
+      "summary": "Jump the sky islands, grab the stars, and reach the beacon. Coyote time and a jump cut are already wired in.",
+      "controls": "← → or A D to move · Space / ↑ / W / tap to jump",
+      "tags": ["platformer", "canvas", "keyboard"],
+      "difficulty": "starter",
+      "featured": true
+    },
+    {
+      "id": "neon-drift",
+      "title": "Neon Drift",
+      "genre": "Top-down shooter",
+      "engine": "Vanilla canvas",
+      "summary": "A wave shooter in a neon arena. Stay moving, lead your shots, and learn two enemy behaviors you can remix.",
+      "controls": "WASD / arrows to move · Mouse to aim · Click or Space to fire",
+      "tags": ["shooter", "waves", "canvas"],
+      "difficulty": "starter",
+      "featured": true
+    },
+    {
+      "id": "cellar-crawl",
+      "title": "Cellar Crawl",
+      "genre": "Roguelike",
+      "engine": "Vanilla canvas",
+      "summary": "A turn-based dungeon crawl with fog, flasks, pests, and stairs. The generator and seed are yours to twist.",
+      "controls": "Arrows or WASD — one step per turn, bump to attack",
+      "tags": ["roguelike", "turn-based", "procgen"],
+      "difficulty": "intermediate",
+      "featured": true
+    },
+    {
+      "id": "skyline-dash",
+      "title": "Skyline Dash",
+      "genre": "Endless runner",
+      "engine": "Vanilla canvas",
+      "summary": "An endless rooftop run with jumps, ducks, gaps, and a local high score. The speed curve is one constant away from a new feel.",
+      "controls": "Space / ↑ / tap to jump · Down / S to duck",
+      "tags": ["runner", "endless", "canvas"],
+      "difficulty": "starter",
+      "featured": false
+    },
+    {
+      "id": "star-forge",
+      "title": "Star Forge",
+      "genre": "Idle clicker",
+      "engine": "HTML & CSS",
+      "summary": "Tap a star, buy generators, and collapse the forge for a prestige bonus. The economy is a single table in game.js.",
+      "controls": "Click the star or press Space · buy from the shop",
+      "tags": ["idle", "clicker", "incremental"],
+      "difficulty": "starter",
+      "featured": false
+    },
+    {
+      "id": "prism-match",
+      "title": "Prism Match",
+      "genre": "Match-3 puzzle",
+      "engine": "Vanilla canvas",
+      "summary": "Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic.",
+      "controls": "Click or tap two adjacent gems to swap",
+      "tags": ["puzzle", "match-3", "canvas"],
+      "difficulty": "starter",
+      "featured": false
+    },
+    {
+      "id": "orbit-garden",
+      "title": "Orbit Garden",
+      "genre": "3D collect-a-thon",
+      "engine": "Three.js",
+      "summary": "Steer a craft around a floating island and gather orbs. Three.js is vendored, so the kit runs offline.",
+      "controls": "WASD or arrows to move",
+      "tags": ["3d", "three.js", "explore"],
+      "difficulty": "intermediate",
+      "featured": true
+    }
+  ]
+}
