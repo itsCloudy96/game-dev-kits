@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-root="../../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prism Match — Free Match-3 puzzle Starter Kit | Cloudy</title>
+<meta name="description" content="Prism Match: Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic. Play it in the browser or download the MIT-licensed zip.">
+<link rel="canonical" href="https://itscloudy96.github.io/game-dev-kits/kit/prism-match/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0b1020">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Cloudy Game Dev Kits">
+<meta property="og:title" content="Prism Match — Free Match-3 puzzle Starter Kit | Cloudy"><meta property="og:description" content="Prism Match: Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic. Play it in the browser or download the MIT-licensed zip.">
+<meta property="og:url" content="https://itscloudy96.github.io/game-dev-kits/kit/prism-match/"><meta property="og:image" content="https://itscloudy96.github.io/game-dev-kits/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@ItsCloudySpace">
+<meta name="twitter:title" content="Prism Match — Free Match-3 puzzle Starter Kit | Cloudy"><meta name="twitter:description" content="Prism Match: Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic. Play it in the browser or download the MIT-licensed zip."><meta name="twitter:image" content="https://itscloudy96.github.io/game-dev-kits/og.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="text/plain" title="LLM summary" href="../../llms.txt">
+<link rel="stylesheet" href="../../css/styles.css?v=2026-11-10">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Prism Match", "url": "https://itscloudy96.github.io/game-dev-kits/kit/prism-match/", "applicationCategory": "GameApplication", "operatingSystem": "Web", "description": "Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "license": "https://opensource.org/licenses/MIT", "author": {"@type": "Organization", "name": "Cloudy"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://itscloudy96.github.io/game-dev-kits/"}, {"@type": "ListItem", "position": 2, "name": "Kits", "item": "https://itscloudy96.github.io/game-dev-kits/kits/"}, {"@type": "ListItem", "position": 3, "name": "Prism Match", "item": "https://itscloudy96.github.io/game-dev-kits/kit/prism-match/"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav">
+<a class="logo" href="../../"><span class="logo-mark" aria-hidden="true">☁️</span>Cloudy <span class="muted" style="font-weight:600">Game Dev Kits</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../../kits/">Kits</a><a href="https://itscloudy96.github.io/ai-tool-finder/">Tool Finder</a><a href="https://itscloudy96.github.io/prompt-library/">Prompts</a><a href="../../about/">About</a><a href="https://cloudys-newsletter.beehiiv.com/subscribe" target="_blank" rel="noopener">Newsletter</a></nav>
+</div></header>
+<main id="main" class="container">
+<p class="crumbs"><a href="../../">Home</a> / <a href="../../kits/">Kits</a> / Prism Match</p>
+<section class="hero" style="padding-top:1.5rem"><h1>Prism Match</h1>
+<p>Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic.</p>
+<div class="tag-row"><span class="badge">Match-3 puzzle</span><span class="badge">Vanilla canvas</span><span class="badge">starter</span></div>
+<p class="muted">Click or tap two adjacent gems to swap</p>
+<div class="kit-actions">
+<a class="btn btn-primary" href="../../downloads/cloudy-prism-match.zip" download>Download zip (9 KB)</a>
+<a class="btn btn-secondary" href="../../demos/prism-match/" target="_blank" rel="noopener">Open demo in a new tab</a>
+</div>
+<p class="download-note">MIT licensed. The zip includes the game, a README, Cursor rules, and the prompt pack below.</p>
+</section>
+<section class="section"><h2>Play it here</h2>
+<div class="demo-frame"><iframe src="../../demos/prism-match/" title="Prism Match demo" loading="lazy" allow="autoplay; fullscreen"></iframe></div></section>
+<section class="section"><h2>README</h2><div class="readme-body prose"><h1>Prism Match</h1>
+<p>A match-3 puzzle on an 8×8 board with 25 moves.</p>
+<p>Swap two adjacent gems. Matches of three or more clear, gravity fills from the top, and combos score more. When you are out of moves, the board calls it.</p>
+<h2>Run it</h2>
+<ul><li>Open <code>index.html</code> or serve the folder.</li><li>Controls: <strong>click or tap</strong> a gem, then an adjacent gem to swap. Clicking a non-neighbor retargets. <strong>Enter</strong> deals a new board after the game ends.</li></ul>
+<h2>What&#x27;s inside</h2>
+<ul><li><code>game.js</code> — <code>COLS</code>, <code>ROWS</code>, <code>MOVES</code>, <code>COLORS</code>, match finding, gravity, drawing.</li><li>Gems are faceted polygons, not icons from another game.</li><li><code>audio.js</code>, <code>boot.js</code>, <code>style.css</code>.</li></ul>
+<h2>Remix ideas</h2>
+<p><code>PROMPTS.md</code> suggests special gems, a target mode, and a hint.</p>
+<h2>License</h2>
+<p>MIT. Built by Cloudy.</p></div></section>
+<section class="section"><h2>Prompt pack</h2>
+<p class="muted">Copy a prompt into Cursor, Claude, or your coding assistant after you unzip the kit. The same text ships as <code>PROMPTS.md</code>.</p>
+<div class="prompt-wrap">
+<button type="button" class="btn btn-secondary btn-sm copy-btn" data-copy-target="#kit-prompts">Copy</button>
+<div class="readme-body" id="kit-prompts"><h1>Vibe-coding prompts for Prism Match</h1>
+<p>Use <code>.cursorrules</code>, then:</p>
+<h2>1. Target mode</h2>
+<blockquote>Add a MODE constant that can be &#x27;moves&#x27; (today) or &#x27;target&#x27;. In target mode I have unlimited moves until I reach a score goal that you pick, and the end screen should say whether I made it.</blockquote>
+<h2>2. Special gems</h2>
+<blockquote>If a match is 4 long, leave a &#x27;prism&#x27; gem that, when matched, clears its row. If a match is 5, leave a gem that clears its color from the board. They should look distinct and still be drawn in code.</blockquote>
+<h2>3. A hint</h2>
+<blockquote>Add an H key or a Hint button that briefly pulses one valid swap, if any exists. If the board has no moves, reshuffle instead of stranding me, and say so in the HUD.</blockquote>
+<h2>4. Animated gravity</h2>
+<blockquote>Right now clears resolve in one step. Add a short fall animation so gems drop into the holes before new ones appear. Keep it snappy (under 300ms) and don&#x27;t let me swap mid-resolve.</blockquote>
+<h2>5. Colorblind palette</h2>
+<blockquote>Add a second palette of shapes-plus-colors (circle, square, diamond, etc.) toggled from a button, so color is not the only tell.</blockquote></div>
+</div></section>
+<section class="section"><h2>More kits</h2><div class="grid"><article class="card tool-card"><h3><a href="../../kit/cloud-hop/">Cloud Hop</a></h3><div><span class="badge">Platformer</span><span class="badge">Vanilla canvas</span></div><p>Jump the sky islands, grab the stars, and reach the beacon. Coyote time and a jump cut are already wired in.</p><div class="meta"><a href="../../kit/cloud-hop/">Play &amp; download →</a><span class="muted">starter</span></div></article><article class="card tool-card"><h3><a href="../../kit/neon-drift/">Neon Drift</a></h3><div><span class="badge">Top-down shooter</span><span class="badge">Vanilla canvas</span></div><p>A wave shooter in a neon arena. Stay moving, lead your shots, and learn two enemy behaviors you can remix.</p><div class="meta"><a href="../../kit/neon-drift/">Play &amp; download →</a><span class="muted">starter</span></div></article><article class="card tool-card"><h3><a href="../../kit/cellar-crawl/">Cellar Crawl</a></h3><div><span class="badge">Roguelike</span><span class="badge">Vanilla canvas</span></div><p>A turn-based dungeon crawl with fog, flasks, pests, and stairs. The generator and seed are yours to twist.</p><div class="meta"><a href="../../kit/cellar-crawl/">Play &amp; download →</a><span class="muted">intermediate</span></div></article></div></section>
+<section class="section card"><h2>Get the daily AI agent changelog</h2><p class="muted">New agent tools and the occasional kit or prompt, in a 3-minute read.</p>
+<form class="newsletter" action="https://cloudys-newsletter.beehiiv.com/subscribe" method="get" target="_blank"><input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required><button class="btn btn-primary" type="submit">Subscribe free</button></form></section>
+<p class="disclaimer">Original Cloudy work. MIT licensed. Art and sound are generated in code.</p>
+</main>
+<footer class="footer"><div class="container footer-grid">
+<div><strong>☁️ Cloudy</strong><p>Free, original game starter kits you can play in the browser and extend with an AI coding assistant.</p>
+<form class="newsletter" action="https://cloudys-newsletter.beehiiv.com/subscribe" method="get" target="_blank"><input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required><button class="btn btn-primary" type="submit">Get the daily AI agent changelog</button></form></div>
+<div><strong>Kits</strong><br><a href="../../kit/cloud-hop/">Cloud Hop</a><br><a href="../../kit/neon-drift/">Neon Drift</a><br><a href="../../kit/cellar-crawl/">Cellar Crawl</a><br><a href="../../kit/skyline-dash/">Skyline Dash</a><br><a href="../../kit/star-forge/">Star Forge</a><br><a href="../../kit/prism-match/">Prism Match</a><br><a href="../../kit/orbit-garden/">Orbit Garden</a></div>
+<div><strong>Cloudy</strong><br><a href="../../about/">About &amp; disclosure</a><br><a href="../../about/#sponsor">Sponsor Cloudy</a><br><a href="https://itscloudy96.github.io/ai-tool-finder/">AI Tool Finder</a><br><a href="https://itscloudy96.github.io/prompt-library/">Prompt Library</a><br><a href="https://x.com/ItsCloudySpace" target="_blank" rel="noopener">@ItsCloudySpace on X</a><br><a href="../../llms.txt">llms.txt</a><br><a href="../../sitemap.xml">Sitemap</a></div>
+</div><div class="container disclaimer" style="margin-top:1rem">© 2026 Cloudy. Kits are original, MIT-licensed, and free to use. Some outbound links may be affiliate links.</div></footer>
+<script src="../../js/app.js?v=2026-11-10" defer></script>
+</body></html>

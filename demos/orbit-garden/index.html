@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit Garden — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Orbit Garden</div>
+      <div id="hud">Orbs 0 / 0</div>
+    </header>
+    <div id="stage">
+      <canvas id="game" width="960" height="540" aria-label="Orbit Garden game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>Orbit Garden</h1>
+        <p>A tiny Three.js garden in the sky. Steer the craft, collect the orbs, and don't drift off the island.</p>
+        <p class="controls">WASD or arrows to move · the craft always faces where you go</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — Three.js is vendored in vendor/ so this runs offline.</p>
+  </div>
+  <script src="vendor/three.min.js"></script>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

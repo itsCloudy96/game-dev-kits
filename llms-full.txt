@@ -1,0 +1,399 @@
+# Cloudy Game Dev Kits: full kit notes
+Updated 2026-11-10. All kits are original Cloudy work, MIT-licensed, and free to download. Art and sound are generated in code. Review and playtest your own changes before you ship them.
+
+## Cloud Hop
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/cloud-hop/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/cloud-hop/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-cloud-hop.zip
+- Genre: Platformer
+- Engine: Vanilla canvas
+- Controls: ← → or A D to move · Space / ↑ / W / tap to jump
+- Summary: Jump the sky islands, grab the stars, and reach the beacon. Coyote time and a jump cut are already wired in.
+
+# Cloud Hop
+
+A tiny 2D platformer you can open in a browser and start vibe-coding.
+
+Run, jump (with coyote time and a jump cut), collect stars, avoid crimson spikes, and reach the beacon at the end of the sky islands.
+
+## Run it
+
+- Double-click `index.html`, or from this folder run `python3 -m http.server 8080` and open http://localhost:8080/
+- Controls: **← →** or **A D** to move, **Space / ↑ / W / tap** to jump, **Enter** to restart after a win or a fall.
+
+## What's inside
+
+- `game.js` — physics, the level, drawing. Constants at the top (`GRAVITY`, `JUMP_VEL`, `LEVEL`, `STARS`).
+- `audio.js` — tiny Web Audio beeps, no sound files.
+- `boot.js` — start overlay, `?autostart=1` for tests, `window.__CLOUDY_KIT__`.
+- `style.css` — the chrome around the canvas.
+
+All art is drawn in code. No spritesheets, no trademarked characters.
+
+## Remix ideas
+
+See `PROMPTS.md` for step-by-step Cursor / Claude prompts. Easy first edits: change `JUMP_VEL`, add a platform to `LEVEL`, or recolor the sky in `drawSky`.
+
+## License
+
+MIT. Built by Cloudy.
+
+
+# Vibe-coding prompts for Cloud Hop
+
+Paste the Cursor rules in `.cursorrules` into your project rules (they're already in this folder). Then try these in order.
+
+## 1. Tighten the jump
+> Open game.js. Keep the current move speed. Tune GRAVITY, JUMP_VEL, COYOTE_FRAMES and the jump cut so I can hop onto a one-tile-high cloud reliably and still clear the longer gaps. Do not add a double jump yet. Tell me what you changed and how I should playtest it.
+
+## 2. Add a moving storm cloud
+> Add a new platform kind called "storm" to LEVEL. It should look different from solid and cloud platforms, drift slowly left and right, and hurt the player on contact the way spikes do. Keep the existing level playable.
+
+## 3. A second, shorter course
+> Add a LEVELS array with the current course as level 1 and a shorter, trickier level 2. Reaching the beacon on level 1 should load level 2 and keep the star count and lives. Reaching the beacon on level 2 still shows the win screen.
+
+## 4. Juice
+> Add a small landing squash, a puff of particles when I collect a star, and a soft camera bump on taking damage. Honor a reduced feel if it's easy: skip extra flash. Do not add image files.
+
+## 5. Touch controls
+> Add on-screen left / right / jump buttons that only show on coarse pointers, without breaking the keyboard controls.
+
+
+## Neon Drift
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/neon-drift/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/neon-drift/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-neon-drift.zip
+- Genre: Top-down shooter
+- Engine: Vanilla canvas
+- Controls: WASD / arrows to move · Mouse to aim · Click or Space to fire
+- Summary: A wave shooter in a neon arena. Stay moving, lead your shots, and learn two enemy behaviors you can remix.
+
+# Neon Drift
+
+A top-down wave shooter in one canvas file.
+
+Move with WASD, aim with the mouse, and clear neon pests as the waves get denser. Two enemy kinds ship in the starter: chasers and sidesteppers.
+
+## Run it
+
+- Open `index.html` or serve the folder.
+- Controls: **WASD / arrows** move, **mouse** aim, **click or Space** fire, **Enter** retry after a wipe.
+
+## What's inside
+
+- `game.js` — player, bullets, waves, particles. Tunables: `PLAYER_SPEED`, `FIRE_COOLDOWN`, `startWave()`.
+- `audio.js`, `boot.js`, `style.css` — shared kit chrome.
+
+Everything is drawn with canvas primitives. No imported sprites.
+
+## Remix ideas
+
+`PROMPTS.md` has a suggested path: a dash, a new enemy, a pickup, and a local high score.
+
+## License
+
+MIT. Built by Cloudy.
+
+
+# Vibe-coding prompts for Neon Drift
+
+Use the `.cursorrules` in this folder, then try:
+
+## 1. A short dash
+> Add a dash on Shift or right-click: a brief burst of speed, a small cooldown, and a faint afterimage drawn on the canvas. The player should stay inside the arena. Show the cooldown somewhere in the HUD.
+
+## 2. A new enemy
+> Add a third enemy kind called "orbiter" that circles the player at a distance and periodically flings a slow projectile. Introduce it from wave 4. It should take two hits. Keep chaser and sider behavior intact.
+
+## 3. A health pickup
+> Occasionally spawn a cyan plus that restores 1 HP, up to the max. It should expire after a few seconds and never spawn on top of the player.
+
+## 4. High score
+> Save the best score in localStorage (use a unique key starting with cloudy-neon-drift). Show it in the HUD and on the game-over screen. Do not add a login or a server.
+
+## 5. Screen wrap or walls
+> Let me pass a flag at the top of game.js, WRAP_ARENA, that switches between today's clamped walls and screen wrapping. Default stays clamped.
+
+
+## Cellar Crawl
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/cellar-crawl/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/cellar-crawl/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-cellar-crawl.zip
+- Genre: Roguelike
+- Engine: Vanilla canvas
+- Controls: Arrows or WASD — one step per turn, bump to attack
+- Summary: A turn-based dungeon crawl with fog, flasks, pests, and stairs. The generator and seed are yours to twist.
+
+# Cellar Crawl
+
+A turn-based roguelike on a grid, with fog of war, flasks, pests, and stairs.
+
+Each key press is one turn: you move or bump-attack, then the mites take their step. A new floor is generated when you walk onto the stairs. The seed is shown so you can talk about a specific cellar.
+
+## Run it
+
+- Open `index.html` or serve the folder.
+- Controls: **arrows or WASD** to move (one cell per press), **Enter** to start a new crawl after you fall.
+
+## What's inside
+
+- `game.js` — room-and-corridor generator, FOV, items, enemies, drawing. `COLS`, `ROWS`, `MAX_HP` are at the top.
+- `audio.js`, `boot.js`, `style.css`.
+
+Tiles, creatures, and items are drawn as simple shapes. No tile sheets from other games.
+
+## Remix ideas
+
+`PROMPTS.md` covers a second enemy AI, a locked door, and a visible map legend.
+
+## License
+
+MIT. Built by Cloudy.
+
+
+# Vibe-coding prompts for Cellar Crawl
+
+Use `.cursorrules`, then:
+
+## 1. Smarter pests
+> When a mite or worm can see the player, it should path around obvious walls instead of walking into them and stalling. Keep the one-step-per-turn rule. Do not add a heavyweight pathfinding library — a tiny BFS on the grid is enough.
+
+## 2. A locked gate
+> Sometimes a room should be behind a gate that opens only if you are carrying a key item. Spawn the key in an earlier room on that floor. Draw the gate and the key as original shapes, not icons from another game.
+
+## 3. A thrown flask
+> Add a 'fire a flask in the last move direction' action on F or Space. It should travel until a wall or an enemy, deal damage, and be limited by how many flasks you have picked up. Don't break bump-to-attack.
+
+## 4. Depth modifiers
+> From floor 4, introduce one new hazard (fungus tiles that deal 1 when you step on them, or a dark floor with a smaller FOV). Make it obvious in the log.
+
+## 5. Shareable seed
+> Let me pass ?seed=12345 to start a crawl with that base seed, and add a "copy seed" button near the HUD using the same boot/page chrome.
+
+
+## Skyline Dash
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/skyline-dash/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/skyline-dash/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-skyline-dash.zip
+- Genre: Endless runner
+- Engine: Vanilla canvas
+- Controls: Space / ↑ / tap to jump · Down / S to duck
+- Summary: An endless rooftop run with jumps, ducks, gaps, and a local high score. The speed curve is one constant away from a new feel.
+
+# Skyline Dash
+
+An endless rooftop runner with a local high score.
+
+The city auto-scrolls. Jump crates, duck under neon bars, and clear gaps that open in the roof. Speed climbs the longer you stay up.
+
+## Run it
+
+- Open `index.html` or serve the folder.
+- Controls: **Space / ↑ / W / tap** jump (a second jump is available in mid-air), **Down / S** duck, **Enter** or tap after a crash to run again.
+
+## What's inside
+
+- `game.js` — speed curve, obstacle spawns, parallax skyline. `START_SPEED`, `JUMP_VEL`, `DOUBLE_JUMP` sit at the top.
+- High score key: `cloudy-skyline-dash-best` in localStorage.
+- `audio.js`, `boot.js`, `style.css`.
+
+The skyline, moon, and obstacles are drawn in code.
+
+## Remix ideas
+
+`PROMPTS.md` has a triple-lane variant, a coin pickup, and a near-miss juice pass.
+
+## License
+
+MIT. Built by Cloudy.
+
+
+# Vibe-coding prompts for Skyline Dash
+
+Use `.cursorrules`, then:
+
+## 1. Fairer gaps
+> Gaps sometimes feel randomly cruel at high speed. Make gap width depend on current speed so a well-timed single jump can still clear them, and keep a few that want a double jump. Add a short comment above the spawn function explaining the rule.
+
+## 2. Coins
+> Add collectible coins in the air or on the roof that bump the score and play the coin beep. They should not sit inside a gap. Show coins in the HUD.
+
+## 3. A third stance
+> Keep jump and duck, and add a short slide on Down while in the air that lets me slip under a bar I would otherwise hit. Give it a small cooldown.
+
+## 4. Day / night cycle
+> Slowly shift the sky palette and window lights over time so a long run feels like dusk, then night, then dawn. No image files.
+
+## 5. Daily seed
+> Use the local date (YYYY-MM-DD) to seed the first 20 seconds of obstacles so two people playing the same day see the same opening, then go random. Show the date in the HUD.
+
+
+## Star Forge
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/star-forge/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/star-forge/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-star-forge.zip
+- Genre: Idle clicker
+- Engine: HTML & CSS
+- Controls: Click the star or press Space · buy from the shop
+- Summary: Tap a star, buy generators, and collapse the forge for a prestige bonus. The economy is a single table in game.js.
+
+# Star Forge
+
+A small idle / clicker about minting stardust.
+
+Tap the star, buy generators, and eventually collapse the forge for a permanent production bonus. Progress is saved in this browser only.
+
+## Run it
+
+- Open `index.html` or serve the folder.
+- Controls: **click the star** or press **Space**. Buy generators on the right. Collapse unlocks at 1,000,000 stardust.
+
+## What's inside
+
+- `game.js` — the `GEN` table (name, base cost, rate), prestige, save/load. Change the table to rebalance the game.
+- `index.html` — layout and the big star button.
+- Save key: `cloudy-star-forge-v1`.
+- `audio.js`, `boot.js`, `style.css`.
+
+No accounts, no server, no third-party analytics.
+
+## Remix ideas
+
+`PROMPTS.md` covers a second prestige layer, a burst skill, and a simple "last 60 seconds" production chart.
+
+## License
+
+MIT. Built by Cloudy.
+
+
+# Vibe-coding prompts for Star Forge
+
+Use `.cursorrules`, then:
+
+## 1. Rebalance mid-game
+> The jump from Nebula Loom to Pulsar Farm feels steep. Rebalance GEN so a curious player can reach a Pulsar in a short session without making the first two generators worthless. Show me the old vs new time-to-buy estimates.
+
+## 2. A burst skill
+> Add a 'flare' button with a 30-second cooldown that triples click power for 8 seconds. Animate the star during the flare (CSS only, no image files) and show the cooldown.
+
+## 3. Offline crumbs
+> When the page loads, grant a little production for the time away, capped at 4 hours, and tell me what I earned. Use timestamps in the existing save object. Still no backend.
+
+## 4. Achievements
+> Add 6 local achievements (first generator, first collapse, reach 1k/sec, and so on) with a simple panel. Store unlocks in the save. No pop-up spam — a quiet toast is enough.
+
+## 5. A visual meter
+> Draw a canvas or CSS ring around the star that fills with current dust toward the next collapse. Keep the click target easy to hit on a phone.
+
+
+## Prism Match
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/prism-match/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/prism-match/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-prism-match.zip
+- Genre: Match-3 puzzle
+- Engine: Vanilla canvas
+- Controls: Click or tap two adjacent gems to swap
+- Summary: Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic.
+
+# Prism Match
+
+A match-3 puzzle on an 8×8 board with 25 moves.
+
+Swap two adjacent gems. Matches of three or more clear, gravity fills from the top, and combos score more. When you are out of moves, the board calls it.
+
+## Run it
+
+- Open `index.html` or serve the folder.
+- Controls: **click or tap** a gem, then an adjacent gem to swap. Clicking a non-neighbor retargets. **Enter** deals a new board after the game ends.
+
+## What's inside
+
+- `game.js` — `COLS`, `ROWS`, `MOVES`, `COLORS`, match finding, gravity, drawing.
+- Gems are faceted polygons, not icons from another game.
+- `audio.js`, `boot.js`, `style.css`.
+
+## Remix ideas
+
+`PROMPTS.md` suggests special gems, a target mode, and a hint.
+
+## License
+
+MIT. Built by Cloudy.
+
+
+# Vibe-coding prompts for Prism Match
+
+Use `.cursorrules`, then:
+
+## 1. Target mode
+> Add a MODE constant that can be 'moves' (today) or 'target'. In target mode I have unlimited moves until I reach a score goal that you pick, and the end screen should say whether I made it.
+
+## 2. Special gems
+> If a match is 4 long, leave a 'prism' gem that, when matched, clears its row. If a match is 5, leave a gem that clears its color from the board. They should look distinct and still be drawn in code.
+
+## 3. A hint
+> Add an H key or a Hint button that briefly pulses one valid swap, if any exists. If the board has no moves, reshuffle instead of stranding me, and say so in the HUD.
+
+## 4. Animated gravity
+> Right now clears resolve in one step. Add a short fall animation so gems drop into the holes before new ones appear. Keep it snappy (under 300ms) and don't let me swap mid-resolve.
+
+## 5. Colorblind palette
+> Add a second palette of shapes-plus-colors (circle, square, diamond, etc.) toggled from a button, so color is not the only tell.
+
+
+## Orbit Garden
+- Page: https://itscloudy96.github.io/game-dev-kits/kit/orbit-garden/
+- Demo: https://itscloudy96.github.io/game-dev-kits/demos/orbit-garden/
+- Zip: https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-orbit-garden.zip
+- Genre: 3D collect-a-thon
+- Engine: Three.js
+- Controls: WASD or arrows to move
+- Summary: Steer a craft around a floating island and gather orbs. Three.js is vendored, so the kit runs offline.
+
+# Orbit Garden
+
+A tiny 3D collect-a-thon built with Three.js.
+
+Steer a little craft around a floating island, gather the golden orbs, and stay on the grass. Three.js r160 is vendored in `vendor/` so the kit runs offline.
+
+## Run it
+
+- Opening `index.html` as a file often works (the kit uses the UMD build). If the canvas is blank, serve the folder: `python3 -m http.server 8080`.
+- Controls: **WASD or arrows** to move. The craft faces the direction of travel. **Enter** restarts after you collect every orb.
+
+## What's inside
+
+- `game.js` — scene setup, island, craft, orbs, camera follow. `SPEED` and `ISLAND_R` are at the top.
+- `vendor/three.min.js` — three.js r160, MIT, copyright the three.js authors. See `vendor/NOTICE.txt`.
+- `audio.js`, `boot.js`, `style.css`.
+
+The island, trees, rocks, and orbs are primitive meshes you can replace or extend.
+
+## Remix ideas
+
+`PROMPTS.md` covers a jump, a day cycle, a second island, and a simple shadow-play camera.
+
+## License
+
+MIT for the kit code, by Cloudy. three.js remains MIT under its own copyright.
+
+
+# Vibe-coding prompts for Orbit Garden
+
+Use `.cursorrules`, then:
+
+## 1. A little hop
+> Add a jump on Space with gravity, so I can hop onto a rock or a low tree stump you place on the island. I should still be stopped at the island rim, and I should not be able to fly.
+
+## 2. A second island
+> Add a second, smaller island a short gap away, with two orbs on it. I need a hop or a moving leaf-platform to cross. Keep the camera comfortable on both islands.
+
+## 3. Sundown
+> Animate the directional light and sky color so a full collection run goes from late afternoon to dusk. The orbs should stay readable.
+
+## 4. A curious critter
+> Add a small original creature (primitives only) that wanders the island and startles away from the craft. No rips from other games. It can be decorative, or it can drop an extra orb the first time I get close.
+
+## 5. First-person toggle
+> Press C to swap between the current follow camera and a first-person view from the craft. Remember the last camera in a variable, not localStorage, unless I ask to save it.
+

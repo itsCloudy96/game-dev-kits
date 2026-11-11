@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Star Forge — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #game-root { display: grid; grid-template-columns: 1.1fr .9fr; gap: 0; min-height: 540px; background:
+      radial-gradient(600px 300px at 50% 20%, rgba(124,92,255,.25), transparent 60%), #070815; }
+    #forge { display: grid; place-items: center; padding: 1.5rem; }
+    #star {
+      width: 220px; height: 220px; border: 0; border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%, #fde68a, #f59e0b 45%, #7c5cff 80%, #1e1b4b);
+      box-shadow: 0 0 40px rgba(251,191,36,.45), 0 0 80px rgba(124,92,255,.25);
+      cursor: pointer; color: transparent; position: relative;
+    }
+    #star:active { transform: scale(.96); }
+    #pops { position: relative; height: 0; }
+    .pop { position: absolute; left: 50%; color: #fde68a; font-weight: 800; animation: rise 700ms ease-out forwards; pointer-events: none; }
+    @keyframes rise { to { transform: translate(-50%, -80px); opacity: 0; } }
+    #shop { padding: 1rem 1.1rem 1.2rem; border-left: 1px solid var(--border); overflow: auto; }
+    #shop h2 { margin: 0 0 .6rem; font-size: 1.1rem; }
+    .gen {
+      display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem;
+      padding: .7rem 0; border-bottom: 1px solid var(--border); align-items: center;
+    }
+    .gen button { border: 0; border-radius: 999px; padding: .45rem .8rem; font-weight: 700; cursor: pointer;
+      background: rgba(124,92,255,.2); color: #eef2ff; border: 1px solid rgba(124,92,255,.4); }
+    .gen button:disabled { opacity: .4; cursor: default; }
+    .muted { color: var(--muted); font-size: .85rem; }
+    #collapse { width: 100%; margin-top: 1rem; }
+    @media (max-width: 700px) { #game-root { grid-template-columns: 1fr; } #shop { border-left: 0; border-top: 1px solid var(--border); } }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Star Forge</div>
+      <div id="hud">0 stardust</div>
+    </header>
+    <div id="stage">
+      <div id="game-root">
+        <div id="forge">
+          <div id="pops"></div>
+          <button id="star" type="button" aria-label="Forge stardust">★</button>
+          <p class="muted" id="rate">0 / sec</p>
+        </div>
+        <div id="shop">
+          <h2>Generators</h2>
+          <div id="gens"></div>
+          <button id="collapse" class="btn" type="button">Collapse (prestige)</button>
+          <p class="muted" id="prestige-hint">Reach 1,000,000 stardust to collapse the forge and keep a permanent multiplier.</p>
+        </div>
+      </div>
+      <div id="overlay" class="overlay">
+        <h1>Star Forge</h1>
+        <p>An idle clicker. Tap the star, buy engines that mint stardust, and collapse for a bigger next run.</p>
+        <p class="controls">Click the star or press Space · progress saves in this browser</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — generator prices and rates are just a table in game.js.</p>
+  </div>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

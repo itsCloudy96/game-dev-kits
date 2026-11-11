@@ -1,0 +1,22 @@
+# Cloudy Game Dev Kits
+
+> Free, original, MIT-licensed game starter kits with in-browser demos, downloadable zips, and AI prompt packs. 7 kits. Run by Cloudy.
+
+Each kit ships as a zip at https://itscloudy96.github.io/game-dev-kits/downloads/cloudy-<id>.zip and a playable demo at https://itscloudy96.github.io/game-dev-kits/demos/<id>/.
+
+## Main pages
+- [Home](https://itscloudy96.github.io/game-dev-kits/)
+- [All kits](https://itscloudy96.github.io/game-dev-kits/kits/)
+- [Full kit text for LLMs](https://itscloudy96.github.io/game-dev-kits/llms-full.txt)
+- [About & disclosure](https://itscloudy96.github.io/game-dev-kits/about/)
+- [Cloudy AI Tool Finder](https://itscloudy96.github.io/ai-tool-finder/)
+- [Cloudy Prompt Library](https://itscloudy96.github.io/prompt-library/)
+
+## Kits
+- [Cloud Hop](https://itscloudy96.github.io/game-dev-kits/kit/cloud-hop/): Jump the sky islands, grab the stars, and reach the beacon. Coyote time and a jump cut are already wired in. Engine: Vanilla canvas.
+- [Neon Drift](https://itscloudy96.github.io/game-dev-kits/kit/neon-drift/): A wave shooter in a neon arena. Stay moving, lead your shots, and learn two enemy behaviors you can remix. Engine: Vanilla canvas.
+- [Cellar Crawl](https://itscloudy96.github.io/game-dev-kits/kit/cellar-crawl/): A turn-based dungeon crawl with fog, flasks, pests, and stairs. The generator and seed are yours to twist. Engine: Vanilla canvas.
+- [Skyline Dash](https://itscloudy96.github.io/game-dev-kits/kit/skyline-dash/): An endless rooftop run with jumps, ducks, gaps, and a local high score. The speed curve is one constant away from a new feel. Engine: Vanilla canvas.
+- [Star Forge](https://itscloudy96.github.io/game-dev-kits/kit/star-forge/): Tap a star, buy generators, and collapse the forge for a prestige bonus. The economy is a single table in game.js. Engine: HTML & CSS.
+- [Prism Match](https://itscloudy96.github.io/game-dev-kits/kit/prism-match/): Swap adjacent gems, chain cascades, and spend 25 moves wisely. Board size and colors are constants, not magic. Engine: Vanilla canvas.
+- [Orbit Garden](https://itscloudy96.github.io/game-dev-kits/kit/orbit-garden/): Steer a craft around a floating island and gather orbs. Three.js is vendored, so the kit runs offline. Engine: Three.js.

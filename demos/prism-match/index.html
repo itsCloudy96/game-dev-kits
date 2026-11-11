@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prism Match — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Prism Match</div>
+      <div id="hud">Score 0 · Moves 25</div>
+    </header>
+    <div id="stage">
+      <canvas id="game" width="960" height="540" aria-label="Prism Match game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>Prism Match</h1>
+        <p>A match-3 puzzle. Swap neighbors, clear three or more of a color, and chase a high score in 25 moves.</p>
+        <p class="controls">Click or tap two adjacent gems to swap · no diagonals</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — board size, colors, and the move limit are constants in game.js.</p>
+  </div>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

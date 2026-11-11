@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skyline Dash — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Skyline Dash</div>
+      <div id="hud">Score 0 · Best 0</div>
+    </header>
+    <div id="stage">
+      <canvas id="game" width="960" height="540" aria-label="Skyline Dash game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>Skyline Dash</h1>
+        <p>An endless rooftop runner. Jump the gaps, hop the crates, and don't eat a billboard.</p>
+        <p class="controls">Space / ↑ / tap to jump · Down / S to duck</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — speed, spawn rates, and obstacle types live at the top of game.js.</p>
+  </div>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

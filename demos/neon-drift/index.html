@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neon Drift — Cloudy Game Kit</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="wrap">
+    <header class="bar">
+      <div class="brand">☁️ Neon Drift</div>
+      <div id="hud">Score 0 · Wave 1 · HP 4</div>
+    </header>
+    <div id="stage">
+      <canvas id="game" width="960" height="540" aria-label="Neon Drift game"></canvas>
+      <div id="overlay" class="overlay">
+        <h1>Neon Drift</h1>
+        <p>A top-down wave shooter. Stay moving, lead your shots, and clear the arena.</p>
+        <p class="controls">WASD / arrows to move · Mouse to aim · Click or Space to fire</p>
+        <button id="start" type="button">Play</button>
+      </div>
+    </div>
+    <p class="hint">A free Cloudy starter kit — the enemy and wave tables in game.js are meant to be edited.</p>
+  </div>
+  <script src="audio.js"></script>
+  <script src="boot.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

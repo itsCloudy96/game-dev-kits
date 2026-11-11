@@ -1,0 +1,23 @@
+# Project rules — Cloudy game starter kit
+
+You are working in a small, original browser game kit from Cloudy.
+
+## Style
+- Keep the code readable. Prefer clear names and short functions over cleverness.
+- Tunable numbers live at the top of game.js. Change those first when asked for feel tweaks.
+- Do not add a bundler, framework, or new library unless the user explicitly asks. Orbit Garden already vendors Three.js; leave that as a static file.
+- Art and sound must stay original or generated in code (canvas drawings, Web Audio beeps). Do not add copyrighted, trademarked, or ripped game assets.
+
+## Changes
+- Make the smallest diff that lands the request. No drive-by rewrites of the game loop.
+- Match the existing style (vanilla JS, no build step). Keep index.html, audio.js, and boot.js working.
+- Preserve `window.__CLOUDY_KIT__`, `bootKit`, `tickKit`, and the `?autostart=1` hook so tests still run.
+- If you add a mechanic, also add a way to verify it (on-screen state, a comment in the README, or a short playtest note).
+
+## Scope
+- Do not change the MIT license or add personal names, emails, or phone numbers.
+- Update README.md when you change controls, file layout, or how to run the kit.
+
+## Star Forge notes
+- Keep saves local and backward-compatible when you add fields.
+- Do not introduce a real-money shop or account system.
